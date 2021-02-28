@@ -14,73 +14,90 @@ var lowerCasedCharacters = [
 var upperCasedCharacters = [
   'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
 ];
-var totalAvailable = [[specialCharacters],[numericCharacters],[lowerCasedCharacters],[upperCasedCharacters]]
-console.log(totalAvailable)
+
+console.log(specialCharacters,numericCharacters,lowerCasedCharacters,upperCasedCharacters)
 // everything above are the variables chosen by user
 
 
 // Assignment Code (already in homework)
 var generateBtn = document.querySelector("#generate");
 
+
 // Add event listener to generate button (already in homework)
 generateBtn.addEventListener("click", writePassword);
-
+console.log(generateBtn)
 // Write password to the #password input   (already in homework)
 function writePassword() {
   var password = generatePassword();
   var password = document.querySelector("#password");
   //  (already in homework - ask Tucker/TA)
-  //  passwordText.value = password;  
-
+       passwordText.value = password;  
 }
+// writePassword()
 
 function generatePassword(){
-    var passwordLength = prompt("How Long Would You Like The Password To Be? Choose 8-128 Characters")
-    var specialCharacters = confirm("Would You Like To Include Special Characters?")
-    var numericCharacters = confirm("Would You Like To Include Numbers?")
-    var upperCasedCharacters = confirm("Would You Like To Include Upper Case Letters?")
-    var lowerCasedCharacters = confirm("Would You Like To Include Lower Case Letters?")
+    var isPasswordLength = prompt("How Long Would You Like The Password To Be? Choose 8-128 Characters")
+    var isSpecialCharacters = confirm("Would You Like To Include Special Characters?")
+    var isNumericCharacters = confirm("Would You Like To Include Numbers?")
+    var isUpperCasedCharacters = confirm("Would You Like To Include Upper Case Letters?")
+    var isLowerCasedCharacters = confirm("Would You Like To Include Lower Case Letters?")
 
-    console.log(passwordLength, specialCharacters, numericCharacters, upperCasedCharacters, lowerCasedCharacters)
+    console.log(isPasswordLength, isSpecialCharacters, isNumericCharacters, isUpperCasedCharacters, isLowerCasedCharacters)
   
-    //  var numberOfCharacters = parseInt(passwordLength)
-    // if (numberOfCharacters < 8 || passwordLength > 128 === true){
-    //   numberOfCharacters === false
-    // }
-    // if (numberOfCharacters === false){
-    // alert("Invalid number chosen. Must Choose Between 8-128 Characters.")
-    // }  
-
-    var list = []
-    if (specialCharacters === true) {
-      list.concat(specialCharacters)
+    //  var numberOfCharacters = parseInt(isPasswordLength)
+    //  if ( isPasswordLength< 8 || isPasswordLength > 128 === true){
+    //   isPasswordLength === false
+    //   }
+    //  if (isPasswordLength === false){
+    //      alert("Invalid number chosen. Must Choose Between 8-128 Characters.")
+    //     } 
+    
+    
+    // ref 2ality for .push
+    var available = []
+    if (isSpecialCharacters === true) {
+      available.push(specialCharacters)
     }
-    console.log(list)
-    if (numericCharacters === true){
-      list.concat(specialCharacters)
+    
+    if (isNumericCharacters === true){
+      available.push(numericCharacters)
      }
-     console.log(list)
-    if (upperCasedCharacters ===true){
-    list.concat(upperCasedCharacters)
+     
+    if (isUpperCasedCharacters ===true){
+      available.push(upperCasedCharacters)
    } 
-   console.log(list)
-    if(lowerCasedCharacters === true){
-    list.concat(lowerCasedCharacters)
+   
+    if(isLowerCasedCharacters === true){
+      available.push(lowerCasedCharacters)
    } 
-   console.log(list)
+   console.log(available)
+   var available
+
+//        function getRandomCharacters(arr) {
+//          var available = Math.random() * arr.length
+//         var available = Math.floor(available)
+//         return arr [available]
+//       }
+// getRandomCharacters()
+// for (var i = 0; i < isPasswordLength; i++) {
+//   var i = Math.floor(Math.random()*available.length);
+    // return password.slice(0,length)
+
+// }
+
+
 }
-  //  console.log([myBigArray])
+generatePassword()
 
-  //  myBigArray.concat(lowerCasedCharacters)
-         
-  // swapping "passwordLength" for a digit found on W3 Schools
-  //  for (var i = 0; i < passwordLength; i++) {
-  //    var myBigArray = Math.floor(Math.random());
-  //      return myBigArray
 
-  //  }
+        
+
+
+// swapping "passwordLength" for a digit found on W3 Schools
+
    
-   
+
+
 
 
 // GIVEN I need a new, secure password
