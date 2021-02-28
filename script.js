@@ -14,6 +14,10 @@ var lowerCasedCharacters = [
 var upperCasedCharacters = [
   'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
 ];
+var totalAvailable = [[specialCharacters],[numericCharacters],[lowerCasedCharacters],[upperCasedCharacters]]
+console.log(totalAvailable)
+// everything above are the variables chosen by user
+
 
 // Assignment Code (already in homework)
 var generateBtn = document.querySelector("#generate");
@@ -26,117 +30,58 @@ function writePassword() {
   var password = generatePassword();
   var password = document.querySelector("#password");
   //  (already in homework - ask Tucker/TA)
-   passwordText.value = password;   
-
+  //  passwordText.value = password;  
 
 }
 
 function generatePassword(){
-  var passwordLength = prompt("How Long Would You Like The Password To Be? Choose 8-128 Characters")
-  var isSpecialCharacters = confirm("Would You Like To Include Special Characters?")
-  var isNumericCharacters = confirm("Would You Like To Include Numbers?")
-  var isUpperCharacters = confirm("Would You Like To Include Upper Case Letters?")
-  var isLowerCharacters = confirm("Would You Like To Include Lower Case Letters?")
+    var passwordLength = prompt("How Long Would You Like The Password To Be? Choose 8-128 Characters")
+    var specialCharacters = confirm("Would You Like To Include Special Characters?")
+    var numericCharacters = confirm("Would You Like To Include Numbers?")
+    var upperCasedCharacters = confirm("Would You Like To Include Upper Case Letters?")
+    var lowerCasedCharacters = confirm("Would You Like To Include Lower Case Letters?")
 
-  console.log(passwordLength, isSpecialCharacters, isNumericCharacters, isUpperCharacters, isLowerCharacters)
+    console.log(passwordLength, specialCharacters, numericCharacters, upperCasedCharacters, lowerCasedCharacters)
+  
+    //  var numberOfCharacters = parseInt(passwordLength)
+    // if (numberOfCharacters < 8 || passwordLength > 128 === true){
+    //   numberOfCharacters === false
+    // }
+    // if (numberOfCharacters === false){
+    // alert("Invalid number chosen. Must Choose Between 8-128 Characters.")
+    // }  
 
-  for (var i = 0; i < 10; i++) {
-  var myBigArray = [];
-  var length = parseInt(passwordLength)
-  if (length <8 || length > 128 === true){
-      length === false
-     }
-  if (length === false){
-    alert("Invalid number chosen. Must Choose Between 8-128 Characters.")
-  }   
-  if (isNumericCharacters === true){
-    myBigArray.concat(numericCharacters)
-  }
-  if (isSpecialCharacters === true) {
-    myBigArray.concat(isSpecialCharacters)
+    var list = []
+    if (specialCharacters === true) {
+      list.concat(specialCharacters)
     }
-  if (isUpperCharacters ===true){
-    myBigArray.concat(isUpperCharacters)
-  } 
-  if(isLowerCharacters === true){
-    myBigArray
-  } else prompt
-
-  console.log(myBigArray)
+    console.log(list)
+    if (numericCharacters === true){
+      list.concat(specialCharacters)
+     }
+     console.log(list)
+    if (upperCasedCharacters ===true){
+    list.concat(upperCasedCharacters)
+   } 
+   console.log(list)
+    if(lowerCasedCharacters === true){
+    list.concat(lowerCasedCharacters)
+   } 
+   console.log(list)
 }
+  //  console.log([myBigArray])
 
-}
-  
- 
+  //  myBigArray.concat(lowerCasedCharacters)
+         
+  // swapping "passwordLength" for a digit found on W3 Schools
+  //  for (var i = 0; i < passwordLength; i++) {
+  //    var myBigArray = Math.floor(Math.random());
+  //      return myBigArray
 
-// 
-
-  //  password
-
-  // var password = generatePassword();
-  
-// var password;
-  // var isValid = validation(passwordLength, isSpecialCharacters,isNumericCharacters,isUpperCharacters,isLowerCharacters);
-
-  // if (isValid === true) {
-  //   password = generatePassword()  
   //  }
- 
-  
-  
-  
+   
+   
 
-// }
-
-// Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
-// function validation(passwordLength, isSpecialCharacters,isNumericCharacters,isUpperCharacters,isLowerCharacters) {
-//      var length = parseInt(passwordLength)
-//      if(length < 8 || length > 128){
-//        return false;
-//      }
-//      if (length ===false) {
-//       alert("Number of Characters Must be Between 8-128.")
-//      }
-
-//      if(isSpecialCharacters||isNumericCharacters||isUpperCharacters||isLowerCharacters){
-//        return true
-//      }
-//      else{
-//       return false
-//      }
-
-     
-
-// }
-
-// ref Tucker
-
-// function ge
-
-
-//ref Ofc Hours
-
-// var password=""
-// for(var i = 0; i < 10; i++) {
-//   password += getRandomItem (specialCharacters);
-//   password += getRandomItem (numericCharacters);
-//   password += getRandomItem (lowerCasedCharactersCharacters);
-//   password += getRandomItem (upperCasedCharacters);
-
-// }
-
-
-// var pets = ["Avery", "Deku", "Meems", "Ruger", "Bane"];
-// // Retrieve a random item from the provided array
-// function getRandomItem(arr) {
-// // Generate a random index from 0 to the length - 1 of our array
-// var randomIndex = Math.random() * arr.length;
-// // round down our random index
-// randomIndex = Math.floor(randomIndex);
-// // return the random item based off of our random index
-// return arr[randomIndex];
 
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
@@ -153,3 +98,5 @@ function generatePassword(){
 // THEN a password is generated that matches the selected criteria
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page.
+
+
