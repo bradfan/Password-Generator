@@ -19,6 +19,9 @@ console.log(specialCharacters,numericCharacters,lowerCasedCharacters,upperCasedC
 // everything above are the variables chosen by user
 
 
+
+
+
 // Assignment Code (already in homework)
 var generateBtn = document.querySelector("#generate");
 
@@ -29,56 +32,88 @@ console.log(generateBtn)
 // Write password to the #password input   (already in homework)
 function writePassword() {
   var password = generatePassword();
-  var password = document.querySelector("#password");
+  var passwordText = document.querySelector("#password");
   //  (already in homework - ask Tucker/TA)
        passwordText.value = password;  
 }
-// writePassword()
 
+// writePassword()
+    var isPasswordLength = ""
 function generatePassword(){
-    var isPasswordLength = prompt("How Long Would You Like The Password To Be? Choose 8-128 Characters")
+    isPasswordLength = window.prompt("How Long Would You Like The Password To Be? Choose 8-128 Characters")
     var isSpecialCharacters = confirm("Would You Like To Include Special Characters?")
     var isNumericCharacters = confirm("Would You Like To Include Numbers?")
     var isUpperCasedCharacters = confirm("Would You Like To Include Upper Case Letters?")
     var isLowerCasedCharacters = confirm("Would You Like To Include Lower Case Letters?")
-
-    console.log(isPasswordLength, isSpecialCharacters, isNumericCharacters, isUpperCasedCharacters, isLowerCasedCharacters)
-  
-    //  var numberOfCharacters = parseInt(isPasswordLength)
-    //  if ( isPasswordLength< 8 || isPasswordLength > 128 === true){
-    //   isPasswordLength === false
-    //   }
-    //  if (isPasswordLength === false){
-    //      alert("Invalid number chosen. Must Choose Between 8-128 Characters.")
-    //     } 
-    
-    
-    // ref 2ality for .push
-    var available = []
-    if (isSpecialCharacters === true) {
-      available.push(specialCharacters)
-    }
-    
-    if (isNumericCharacters === true){
-      available.push(numericCharacters)
-     }
      
-    if (isUpperCasedCharacters ===true){
-      available.push(upperCasedCharacters)
-   } 
-   
-    if(isLowerCasedCharacters === true){
-      available.push(lowerCasedCharacters)
-   } 
-   console.log(available)
-   var available
+    console.log(isPasswordLength, isSpecialCharacters, isNumericCharacters, isUpperCasedCharacters, isLowerCasedCharacters)
+    debugger
+        var password = ""
+    for (let i= 0; i< isPasswordLength; i++) {
+      if (isSpecialCharacters ===true){
+        password += getRandomItem(specialCharacters)
+      }
+      if (isNumericCharacters ===true){
+        password += getRandomItem(numericCharacters)
+      }
+      if (isLowerCasedCharacters ===true){
+        password += getRandomItem(lowerCasedCharacters)
+      }
+      if (isUpperCasedCharacters ===true){
+        password += getRandomItem(upperCasedCharacters)
+      }
+      // console.log(getRandomItem);
+    }
 
-//        function getRandomCharacters(arr) {
-//          var available = Math.random() * arr.length
-//         var available = Math.floor(available)
-//         return arr [available]
-//       }
-// getRandomCharacters()
+    function getRandomItem(arr) {
+      // Generate a random index from 0 to the length - 1 of our array
+      var randomIndex = Math.random() * arr.length;
+      // round down our random index
+      randomIndex = Math.floor(randomIndex);
+      // return the random item based off of our random index
+      return arr[randomIndex];
+      // One liner of the above code
+      // return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+ }
+
+       // One liner of the above code
+      // return arr[Math.floor(Math.random() * arr.length)];           
+  //          function getRandom(available) {
+  //             var randomIndex= Math.floor(Math.random()) * arr.length;     children = hege.concat(stale);
+  //            var item = available[randomIndex]
+  //           console.log(item)
+  //        }
+  //  getRandom()
+
+ // ref 2ality for .push
+//  var available = ""
+//  if (isSpecialCharacters === true) {
+//    available += (specialCharacters)
+//  } 
+ 
+//  if (isNumericCharacters === true){
+//    available.push(numericCharacters)
+//   }
+  
+//  if (isUpperCasedCharacters ===true){
+//    available.push(upperCasedCharacters)
+// } 
+
+//  if(isLowerCasedCharacters === true){
+//    available.push(lowerCasedCharacters)
+// } console.log(available)
+
+//  for (var i = 0; i < ispasswordLength; i++) {
+// var i = Math.floor(Math.random()*available.length);
+// console.log(i)
+// }
+// generatePassword()
+
+
+
+
 // for (var i = 0; i < isPasswordLength; i++) {
 //   var i = Math.floor(Math.random()*available.length);
     // return password.slice(0,length)
@@ -86,16 +121,18 @@ function generatePassword(){
 // }
 
 
-}
-generatePassword()
-
-
         
 
 
 // swapping "passwordLength" for a digit found on W3 Schools
 
-   
+   //  var numberOfCharacters = parseInt(isPasswordLength)
+    //  if ( "isPasswordLength" < 8 || "isPasswordLength" > 128 === true){
+    //   isPasswordLength === false
+    //   }
+    //  if (isPasswordLength === false){
+    //      alert("Invalid number chosen. Must Choose Between 8-128 Characters.")
+    //     } // 
 
 
 
