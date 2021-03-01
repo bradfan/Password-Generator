@@ -22,10 +22,19 @@ https://www.w3schools.com/js/js_loop_for.asp
 2ality:
 https://2ality.com/2017/04/conditional-literal-entries.html
 
-Free Code Camp
+FreeCodeCamp.org
 
 youtube: 
 https://youtu.be/-xAJKmjKCUE
 https://youtu.be/NPbDqbwtr-4
 
 Instructor/Ofc Hours
+
+![alt text](screenshots/filename.png )
+
+
+
+
+
+
+
