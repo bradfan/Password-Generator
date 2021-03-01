@@ -14,8 +14,6 @@ var lowerCasedCharacters = [
 var upperCasedCharacters = [
   'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
 ];
-
-console.log(specialCharacters,numericCharacters,lowerCasedCharacters,upperCasedCharacters)
 // everything above are the variables chosen by user
 
 // Assignment Code (already in homework)
@@ -23,14 +21,14 @@ var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button (already in homework)
 generateBtn.addEventListener("click", writePassword);
-console.log(generateBtn)
+
 // Write password to the #password input   (already in homework)
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-      password = password.slice(0,isPasswordLength)
+       password = password.slice(0,isPasswordLength)
       passwordText.value = password;  
-       //  (already in homework - ask Tucker/TA?)
+       //  (already in homework - broken syntax broke code)
 }
 
 // writePassword()
@@ -41,15 +39,14 @@ function writePassword() {
     if(isPasswordLength < 8 || isPasswordLength > 128 === true){
          alert("Please click the 'Generate Password' button again and choose Between 8-128 Characters.");
     
-           Return
+           return
     }
     var isSpecialCharacters = confirm("Would You Like To Include Special Characters?")
     var isNumericCharacters = confirm("Would You Like To Include Numbers?")
     var isUpperCasedCharacters = confirm("Would You Like To Include Upper Case Letters?")
     var isLowerCasedCharacters = confirm("Would You Like To Include Lower Case Letters?")
      
-    console.log(isPasswordLength, isSpecialCharacters, isNumericCharacters, isUpperCasedCharacters, isLowerCasedCharacters)
-    debugger
+
          password = ""
         // ref W3 schools for substitution of an array in "for Loop"
         // this abbreviated for loop determines how many times the if satement is run. covered in ofc hours.
