@@ -30,16 +30,16 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
       password = password.slice(0,isPasswordLength)
       passwordText.value = password;  
-       //  (already in homework - ask Tucker/TA)
+       //  (already in homework - ask Tucker/TA?)
 }
 
 // writePassword()
  isPasswordLength = ""
  function generatePassword(){
-  // window.prompt (courtesy of MDN via Scott Ray) changes a string value to an integer
+  // window.prompt api (courtesy of MDN via Scott Ray) converts a string to a number.
     isPasswordLength = window.prompt("How Long Would You Like The Password To Be? Choose 8-128 Characters")
     if(isPasswordLength < 8 || isPasswordLength > 128 === true){
-         alert("Dial it back and read the instructions. Choose Between 8-128 Characters.");
+         alert("Please click the 'Generate Password' button again and choose Between 8-128 Characters.");
     
            Return
     }
@@ -52,10 +52,8 @@ function writePassword() {
     debugger
          password = ""
         // ref W3 schools for substitution of an array in "for Loop"
-        //This For Loop was covered in morning office hours on either 2/25 or 2/26.
-        // The logic I tried was fatally flawed because of the array it created.
-        // Collaberation with Scott Ray led me back to what was covered. Use of the Assignmet operand += allows for data to be merged in this instance w/o a lot of code.
-    for (let i= 0; i< isPasswordLength; i++) {
+        // this abbreviated for loop determines how many times the if satement is run. covered in ofc hours.
+       for (let i= 0; i< isPasswordLength; i++) {
       if (isSpecialCharacters ===true){
         password += getRandomItem(specialCharacters)
       }
@@ -68,7 +66,8 @@ function writePassword() {
       if (isUpperCasedCharacters ===true){
         password += getRandomItem(upperCasedCharacters)
       } 
-    }return(password)
+     }
+    return(password)
   }
 
       // comments left in from Instructor
