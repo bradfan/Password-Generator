@@ -18,13 +18,8 @@ var upperCasedCharacters = [
 console.log(specialCharacters,numericCharacters,lowerCasedCharacters,upperCasedCharacters)
 // everything above are the variables chosen by user
 
-
-
-
-
 // Assignment Code (already in homework)
 var generateBtn = document.querySelector("#generate");
-
 
 // Add event listener to generate button (already in homework)
 generateBtn.addEventListener("click", writePassword);
@@ -33,14 +28,21 @@ console.log(generateBtn)
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  //  (already in homework - ask Tucker/TA)
-       passwordText.value = password;  
+      password = password.slice(0,isPasswordLength)
+      passwordText.value = password;  
+       //  (already in homework - ask Tucker/TA)
 }
 
 // writePassword()
-    var isPasswordLength = ""
-function generatePassword(){
+ isPasswordLength = ""
+ function generatePassword(){
+  // window.prompt (courtesy of MDN via Scott Ray) changes a string value to an integer
     isPasswordLength = window.prompt("How Long Would You Like The Password To Be? Choose 8-128 Characters")
+    if(isPasswordLength < 8 || isPasswordLength > 128 === true){
+         alert("Dial it back and read the instructions. Choose Between 8-128 Characters.");
+    
+           Return
+    }
     var isSpecialCharacters = confirm("Would You Like To Include Special Characters?")
     var isNumericCharacters = confirm("Would You Like To Include Numbers?")
     var isUpperCasedCharacters = confirm("Would You Like To Include Upper Case Letters?")
@@ -48,7 +50,11 @@ function generatePassword(){
      
     console.log(isPasswordLength, isSpecialCharacters, isNumericCharacters, isUpperCasedCharacters, isLowerCasedCharacters)
     debugger
-        var password = ""
+         password = ""
+        // ref W3 schools for substitution of an array in "for Loop"
+        //This For Loop was covered in morning office hours on either 2/25 or 2/26.
+        // The logic I tried was fatally flawed because of the array it created.
+        // Collaberation with Scott Ray led me back to what was covered. Use of the Assignmet operand += allows for data to be merged in this instance w/o a lot of code.
     for (let i= 0; i< isPasswordLength; i++) {
       if (isSpecialCharacters ===true){
         password += getRandomItem(specialCharacters)
@@ -61,10 +67,12 @@ function generatePassword(){
       }
       if (isUpperCasedCharacters ===true){
         password += getRandomItem(upperCasedCharacters)
-      }
-      // console.log(getRandomItem);
-    }
+      } 
+    }return(password)
+  }
 
+    
+        // comments left in from Instructor
     function getRandomItem(arr) {
       // Generate a random index from 0 to the length - 1 of our array
       var randomIndex = Math.random() * arr.length;
@@ -76,63 +84,9 @@ function generatePassword(){
       // return arr[Math.floor(Math.random() * arr.length)];
     }
 
- }
+//  }
 
-       // One liner of the above code
-      // return arr[Math.floor(Math.random() * arr.length)];           
-  //          function getRandom(available) {
-  //             var randomIndex= Math.floor(Math.random()) * arr.length;     children = hege.concat(stale);
-  //            var item = available[randomIndex]
-  //           console.log(item)
-  //        }
-  //  getRandom()
-
- // ref 2ality for .push
-//  var available = ""
-//  if (isSpecialCharacters === true) {
-//    available += (specialCharacters)
-//  } 
- 
-//  if (isNumericCharacters === true){
-//    available.push(numericCharacters)
-//   }
-  
-//  if (isUpperCasedCharacters ===true){
-//    available.push(upperCasedCharacters)
-// } 
-
-//  if(isLowerCasedCharacters === true){
-//    available.push(lowerCasedCharacters)
-// } console.log(available)
-
-//  for (var i = 0; i < ispasswordLength; i++) {
-// var i = Math.floor(Math.random()*available.length);
-// console.log(i)
-// }
-// generatePassword()
-
-
-
-
-// for (var i = 0; i < isPasswordLength; i++) {
-//   var i = Math.floor(Math.random()*available.length);
-    // return password.slice(0,length)
-
-// }
-
-
-        
-
-
-// swapping "passwordLength" for a digit found on W3 Schools
-
-   //  var numberOfCharacters = parseInt(isPasswordLength)
-    //  if ( "isPasswordLength" < 8 || "isPasswordLength" > 128 === true){
-    //   isPasswordLength === false
-    //   }
-    //  if (isPasswordLength === false){
-    //      alert("Invalid number chosen. Must Choose Between 8-128 Characters.")
-    //     } // 
+   
 
 
 
