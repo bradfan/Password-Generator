@@ -71,8 +71,7 @@ function writePassword() {
     }return(password)
   }
 
-    
-        // comments left in from Instructor
+      // comments left in from Instructor
     function getRandomItem(arr) {
       // Generate a random index from 0 to the length - 1 of our array
       var randomIndex = Math.random() * arr.length;
@@ -84,7 +83,7 @@ function writePassword() {
       // return arr[Math.floor(Math.random() * arr.length)];
     }
 
-//  }
+
 
    
 
