@@ -36,7 +36,7 @@ function writePassword() {
 // writePassword()
  isPasswordLength = ""
  function generatePassword(){
-  // window.prompt api (courtesy of MDN via Scott Ray) converts a string to a number.
+  // window.prompt api (MDN) converts a string to a number.
     isPasswordLength = window.prompt("How Long Would You Like The Password To Be? Choose 8-128 Characters")
     if(isPasswordLength < 8 || isPasswordLength > 128 === true){
          alert("Please click the 'Generate Password' button again and choose Between 8-128 Characters.");
